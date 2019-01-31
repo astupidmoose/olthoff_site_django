@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Git Code Reference{% endblock %}
+
+{% block content %}
+
+<h1>Github Commands</h1>
+<p>This is a collection of commands I use to get git up and running in various projects</p>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <td colspan=2 scope="rowgroup" class="bg-danger text-light font-weight-bold">Initialize Git</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Set a Global Username</td>
+      <td><code>$ git config --global user.name "Your Name"</code></td>
+    </tr>
+    <tr>
+      <td>Set a Global Email Address</td>
+      <td><code>$ git config --global user.email "Your Email"</code></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>$ git config --global push.default matching</code></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>$ git config --global alias.co checkout</code></td>
+    </tr>
+    <tr>
+      <td>Initialize Repo</td>
+      <td><code>$ git init</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <td colspan=2 scope="rowgroup" class="bg-danger text-light font-weight-bold">Add Files To Git</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Add All Files to Git Repo</td>
+      <td><code>$ git add .</code></td>
+    </tr>
+    <tr>
+      <td>Commit Changes and Add a Message</td>
+      <td><code>$ git commit -am "Commit Message"</code></td>
+    </tr>
+    <tr>
+      <td>Push Code (Check Github Specific Links if pushing to GH)</td>
+      <td><code>$ git push</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <td colspan=2 scope="rowgroup" class="bg-danger text-light font-weight-bold">Roll Back Code To Last Commit</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Roll Back Code To Last Commit</td>
+      <td><code>$ git checkout .</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <td colspan=2 scope="rowgroup" class="bg-danger text-light font-weight-bold">Branches</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>See What Branch You're On</td>
+      <td><code>$ git status</code></td>
+    </tr>
+    <tr>
+      <td>Create and Switch To A New Branch</td>
+      <td><code>$ git checkout -b BranchName</code></td>
+    </tr>
+    <tr>
+      <td>Switch To A Different Branch (Already Created)</td>
+      <td><code>$ git branch BranchName</code></td>
+    </tr>
+    <tr>
+      <td>Push Branch To Github</td>
+      <td><code>$ git push origin BranchName</code></td>
+    </tr>
+    <tr>
+      <td>Push Master Branch To Github</td>
+      <td><code>$ git push origin master</code></td>
+    </tr>
+    <tr>
+      <td>Switch Back To Your Master Branch</td>
+      <td><code>$ git checkout master</code></td>
+    </tr>
+    <tr>
+      <td>Merge Branch Back Into Master Branch while checked in to branch</td>
+      <td><code>$ git merge</code></td>
+    </tr>
+    <tr>
+      <td>Merge Branch Back Into Master Branch while checked in to master branch</td>
+      <td><code>$ git merge BranchName</code></td>
+    </tr>
+    <tr>
+      <td>Delete Old Branch After You've Merged It To Master</td>
+      <td><code>$ git branch -d oldBranchName</code></td>
+    </tr>
+    <tr>
+      <td>Resolve Merge Conflicts Visually</td>
+      <td><code>$ git mergetool</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <td colspan=2 scope="rowgroup" class="bg-danger text-light font-weight-bold">Set up and push to Heroku</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Test to see if you have the heroku toolbelt installed</td>
+      <td><code>$ heroku --version</code></td>
+    </tr>
+    <tr>
+      <td>Login To Heroku</td>
+      <td><code>$ heroku login</code></td>
+    </tr>
+    <tr>
+      <td>Create An App</td>
+      <td><code>$ heroku create</code></td>
+    </tr>
+    <tr>
+      <td>Rename Your App At Heroku</td>
+      <td><code>$ heroku rename ENTERNAME</code></td>
+    </tr>
+    <tr>
+      <td>Push Your Code</td>
+      <td><code>$ git push heroku master</code></td>
+    </tr>
+  </tbody>
+</table>
+
+
+{% endblock %}
